@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <div class="page-title-box">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <h4 class="page-title">List Music</h4>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><p  [class]="listMusic.length%2===0? 'red': 'blue'">Class binding</p></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+    <div class="row">
+        <div class="col-12">
+            <!-- Left sidebar -->
+            <div class="email-leftbar card"><a href="#"
+                    class="btn btn-danger btn-rounded btn-custom btn-block waves-effect waves-light"
+                    (click)="onShowList()">Show list</a>
+                <div class="mail-list m-t-20" *ngIf="show">
+                    <a href="#" *ngFor="let a of listMusic" (click)="onSelect(a)" [class]="a.id%2===0? 'chan': ''"><span
+                            class="mdi mdi-arrow-right-drop-circle text-info float-right"></span>{{a.name}}</a>
+                </div>
+            </div>
+            <!-- End Left sidebar -->
+            <!-- Right Sidebar -->
+            <div class="email-rightbar mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group" *ngIf="selectSong">
+                                <p>Song: ( two way binding)</p>
+                                <input type="text" name="name" [(ngModel)]="selectSong.name" class="form-control"
+                                    placeholder="Name Song">
+
+                            </div>
+
+                            <div class="form-group" *ngIf="selectSong">
+                                <p>Author:</p>
+                                <input type="text" disabled name="author" class="form-control"
+                                    [placeholder]="selectSong.author +  '    -->property bindding'">
+                            </div><hr>
+                            <div class="form-group">
+                                <div class="summernote">
+                                    <h2  [style.color]="listMusic.length%2===0? 'red' : 'yellow'">Add music here: ( style binding )</h2>
+                                    <div class="form-group">
+                                        <input type="text" name="newName"
+                                            class="form-control mb-2" [(ngModel)]="newName" placeholder="Song">
+                                        <input type="text" name="newAuthor"
+                                            class="form-control" [(ngModel)]="newAuthor" placeholder="Author">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-toolbar form-group mb-0">
+                                <div class="">
+                                    <button (click)="removeMusic(selectSong.id)" type="button"
+                                        class="btn btn-success waves-effect waves-light m-r-5"><i
+                                            class="far fa-trash-alt"></i></button>
+                                    <button (click)="addMusic()" class="btn btn-primary waves-effect waves-light"><span>Add</span> <i
+                                            class="fab fa-telegram-plane m-l-10"></i></button>
+                                    -->Event binding
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- end Col-9 -->
+        </div>
+    </div>
+    <!-- End row -->
+</div>
