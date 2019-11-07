@@ -1,0 +1,8 @@
+<div class="email-centerbar card"><a [style.color] ="'white'"
+    class="btn btn-danger btn-rounded btn-custom btn-block waves-effect waves-light"
+    >Show list</a>
+<div class="mail-list m-t-20" [style.textAlign]="'center'">
+    <a [routerLink]="['/edit/'+a.userName]" routerLinkActive="router-link-active"  *ngFor="let a of list" (click)="onSelect(a)" ><span
+            class="mdi mdi-arrow-right-drop-circle text-info float-right"></span>{{a.userName}}</a>
+</div>
+</div>

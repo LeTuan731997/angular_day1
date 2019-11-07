@@ -6,17 +6,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopBarTopComponent } from './top-bar-top/top-bar-top.component';
 import { ContentListComponent } from './content-list/content-list.component';
+import { LoginComponent } from './login/login.component';
+import { InsertComponent } from './insert/insert.component';
+import { ListInsertComponent } from './list-insert/list-insert.component';
+import { EditInsertComponent } from './edit-insert/edit-insert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarTopComponent,
     ContentListComponent,
+    LoginComponent,
+    InsertComponent,
+    ListInsertComponent,
+    EditInsertComponent,
   ],
   imports: [
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
