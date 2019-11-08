@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(loginForm) {
     if(loginForm.form.value.userpassword && loginForm.form.value.username){
-      this.router.navigate(['/'])
+      this.router.navigate(['/insert'])
     }
   }
 

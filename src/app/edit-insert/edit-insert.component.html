@@ -1,10 +1,11 @@
+
 <div class="home-btn d-none d-sm-block"><a href="index.html" class="text-dark"><i class="fas fa-home h2"></i></a></div>
-<form novalidate (ngSubmit)="onSubmit(form)" #form="ngForm" class="row justify-content-md-center">
+<form novalidate (submit)="onSubmit(form)"  #form="ngForm" class="row justify-content-md-center">
     <div class="col-md-8">
         <div class="form-group row">
             <label for="example-text-input" class="col-md-2 col-form-label">Username:</label>
             <div class="col-md-10">
-                <input class="form-control" type="text" id="example-text-input" [(ngModel)]="contac.userName"
+                <input class="form-control" type="text" id="example-text-input" [(ngModel)]="list.userName"
                     name="userName" #user="ngModel" pattern="[a-zA-Z0-9]*" required>
                 <div class="col alert alert-danger mt-2" role="alert" *ngIf="user?.errors?.required && form.submitted">
                     UserName is required
@@ -17,7 +18,7 @@
         <div class="form-group row">
             <label for="example-email-input" class="col-md-2 col-form-label">Email:</label>
             <div class="col-md-10">
-                <input class="form-control" type="email" id="example-email-input" [(ngModel)]="contac.email"
+                <input class="form-control" type="email" id="example-email-input" [(ngModel)]="list.email"
                     name="email" #email="ngModel" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]{1,40}$">
                 <div class="col alert alert-danger mt-2" role="alert" *ngIf="email?.errors?.required && form.submitted">
                     Email is required
@@ -30,7 +31,7 @@
         <div class="form-group row">
             <label for="example-url-fb" class="col-md-2 col-form-label">Age:</label>
             <div class="col-md-10">
-                <input class="form-control" type="text" id="example-url-fb" [(ngModel)]="contac.age" name="age"
+                <input class="form-control" type="text" id="example-url-fb" [(ngModel)]="list.age" name="age"
                     #age="ngModel" pattern="[0-9]*">
                 <div class="col alert alert-danger mt-2" role="alert" *ngIf="age?.errors?.pattern && form.submitted">
                     Age is number
@@ -41,41 +42,51 @@
             <div class="col-sm-4" style="float: left">
                 <label for="exampleFormControlSelect1">Ngày</label>
                 <select   class="form-control" id="exampleFormControlSelect1" 
-                [(ngModel)]="contac.day" name="day" 
+                 name="day" 
                 >
-                    <option>{{ today | date:'dd' }}</option>
-                    <option>1</option>
-                    <option>2</option>
+                    <option>{{ list.birthday.substring(0, 2) }}</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
                 </select>
             </div>
             <div class="col-sm-4" style="float: left">
                 <label for="exampleFormControlSelect1">Tháng</label>
                 <select class="form-control" id="exampleFormControlSelect1"
-                [(ngModel)]="contac.month" name="month" 
+                 name="month" 
                 >
-                    <option>{{ today | date:'MM' }}</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option>{{ list.birthday.substring(3,5) }}</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
                 </select>
             </div>
             <div class="col-sm-4" style="float: left">
                 <label for="exampleFormControlSelect1">Năm</label>
                 <select class="form-control" id="exampleFormControlSelect1"
-                [(ngModel)]="contac.yeal" name="yeal" 
+                 name="yeal" 
                 >
-                    <option>{{ today | date:'y' }}</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option>{{ list.birthday.substring(6, 10) }}</option>
+                    <option>1990</option>
+                    <option>1991</option>
+                    <option>1992</option>
+                    <option>1993</option>
+                    <option>1994</option>
+                    <option>1995</option>
+                    <option>1996</option>
+                    <option>1997</option>
                 </select>
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-10 offset-md-2">
-                <button class="btn btn-primary" type="submit">Insert</button>
+                <button class="btn btn-primary" type="submit">Update</button>
             </div>
         </div>
     </div>

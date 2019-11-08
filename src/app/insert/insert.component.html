@@ -12,6 +12,9 @@
                 <div class="col alert alert-danger mt-2" role="alert" *ngIf="user?.errors?.pattern && form.submitted">
                     UserName is not chứa kí tự đặc biệt
                 </div>
+                <div class="col alert alert-danger mt-2" role="alert" *ngIf="contac.err">
+                    UserName is exist
+                </div>
             </div>
         </div>
         <div class="form-group row">
@@ -43,7 +46,7 @@
                 <select   class="form-control" id="exampleFormControlSelect1" 
                 [(ngModel)]="contac.day" name="day" 
                 >
-                    <option>{{ today | date:'dd' }}</option>
+                    <!-- <option>{{ today | date:'dd' }}</option> -->
                     <option>01</option>
                     <option>02</option>
                     <option>03</option>
@@ -57,7 +60,7 @@
                 <select class="form-control" id="exampleFormControlSelect1"
                 [(ngModel)]="contac.month" name="month" 
                 >
-                    <option>{{ today | date:'MM' }}</option>
+                    <!-- <option>{{ today | date:'MM' }}</option> -->
                     <option>01</option>
                     <option>02</option>
                     <option>03</option>
@@ -71,7 +74,7 @@
                 <select class="form-control" id="exampleFormControlSelect1"
                 [(ngModel)]="contac.yeal" name="yeal" 
                 >
-                    <option>{{ today | date:'y' }}</option>
+                    <!-- <option>{{ today | date:'y' }}</option> -->
                     <option>1990</option>
                     <option>1991</option>
                     <option>1992</option>
