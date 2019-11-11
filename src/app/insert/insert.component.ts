@@ -20,6 +20,7 @@ export class InsertComponent implements OnInit {
         err: false,
         birthday:"",
     }
+    show: boolean = false;
     list: ListInsert[] = localStorage.getItem('list') ? JSON.parse(localStorage.getItem('list')) : [];
 
     today: number = Date.now();
@@ -55,7 +56,7 @@ export class InsertComponent implements OnInit {
                 birthday: this.contac.birthday,
             });
             localStorage.setItem('list', JSON.stringify(this.list));
-            alert("User của người dùng đã được insert");
+            alert("Insert thành công");
             return this.router.navigate(['/list']);
         }
     }
