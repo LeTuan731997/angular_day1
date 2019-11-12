@@ -3,23 +3,30 @@
     <div class="card">
         <div class="card-body">
             <h4 class="mt-0 header-title">Zoom in and zoom out</h4>
-            <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <!-- <form (ngSubmit)="onSubmit(form)" #form="ngForm">
                 <div class="form-group">
                     <input type="file" name="file" [(ngModel)]="currentInput" (change)="onSelectFile($event)"
                         class="filestyle" data-buttonname="btn-secondary">
                 </div>
-            </form>
-
-            <div class="col-sm-3 mb-3 ">
-                <select class="custom-select" [(ngModel)]="currentInputSelect" (change)="onChange()">
-                    <option value="1">10%</option>
-                    <option value="2">50%</option>
-                    <option value="3">75%</option>
-                    <option selected="selected" value="4">100%</option>
-                    <option value="5">120%</option>
-                    <option value="6">150%</option>
-                    <option value="7">200%</option>
-                </select>
+            </form> -->
+            <div class="btn-group m-b-10">
+                <button (click)="onClickZoom()"  type="button" class="btn btn-dark waves-effect waves-light">
+                    <span class="fas fa-search-plus"></span>    
+                </button>
+                <div>
+                    <select class="custom-select" [(ngModel)]="currentInputSelect" (change)="onChange()">
+                        <option value="1">10%</option>
+                        <option value="2">50%</option>
+                        <option value="3">75%</option>
+                        <option selected="selected" value="4">100%</option>
+                        <option value="5">120%</option>
+                        <option value="6">150%</option>
+                        <option value="7">200%</option>
+                    </select>
+                </div>
+                <button (click)="onClickZoomOut()" type="button" class="btn btn-dark waves-effect waves-light">
+                    <span class="fas fa-search-minus"></span>
+                </button>
             </div>
             <div class="canvas">
                 <canvas #canvas id="canvas" [@rotatedState]='state' style="border:1px solid red">
