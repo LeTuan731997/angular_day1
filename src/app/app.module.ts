@@ -11,6 +11,7 @@ import { InsertComponent } from './insert/insert.component';
 import { ListInsertComponent } from './list-insert/list-insert.component';
 import { EditInsertComponent } from './edit-insert/edit-insert.component';
 import { ImageComponent } from './image/image.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ImageComponent } from './image/image.component';
     FormsModule,
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

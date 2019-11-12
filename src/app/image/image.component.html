@@ -3,15 +3,26 @@
     <div class="card">
         <div class="card-body">
             <h4 class="mt-0 header-title">Zoom in and zoom out</h4>
-            <!-- <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <form (ngSubmit)="onSubmit(form)" #form="ngForm">
                 <div class="form-group">
-                    <input type="file" name="file" [(ngModel)]="currentInput" (change)="onSelectFile($event)" class="filestyle" data-buttonname="btn-secondary">
+                    <input type="file" name="file" [(ngModel)]="currentInput" (change)="onSelectFile($event)"
+                        class="filestyle" data-buttonname="btn-secondary">
                 </div>
-            </form> -->
-            <button type="button" (click)="zoomIn()" class="btn btn-info waves-effect waves-light mr-3 mb-3">Zoom in ( + )</button>
-            <button type="button" (click)="zoomOut()" class="btn btn-info waves-effect mb-3">Zoom out ( - )</button>
-            <div  class="canvas">
-                <canvas #canvas>
+            </form>
+
+            <div class="col-sm-3 mb-3 ">
+                <select class="custom-select" [(ngModel)]="currentInputSelect" (change)="onChange()">
+                    <option value="1">10%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option selected="selected" value="4">100%</option>
+                    <option value="5">120%</option>
+                    <option value="6">150%</option>
+                    <option value="7">200%</option>
+                </select>
+            </div>
+            <div class="canvas">
+                <canvas #canvas id="canvas" [@rotatedState]='state' style="border:1px solid red">
                 </canvas>
             </div>
         </div>
